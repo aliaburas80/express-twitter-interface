@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
     <meta charset="utf-8">
-    <title></title>
-  </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Twitter Service!</title>
+
+    <!-- Bootstrap -->
+    <link href="/src/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/src/dist/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/src/dist/css/sticky-footer.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
   <body>
       <div class="container">
+
+          <div class="row">
+              <h1>Twitter sevice interface</h1>
+          </div>
+
+
         <div class="row">
+
           <form class="form" action="" method="post">
               <div class="info">
-                Please fill all fields bellow with valid information about your twitter app in twitter developer account.
+               <h3>To Fill these informations, please go to <a href="https://dev.twitter.com/">my apps</a> </h3>
               </div>
-              <div class="row">
+              <div class="form-group">
                 <label for="ckey">Consumer Key (API Key)</label>
-                <input type="text" name="ckey" value="" placeholder="zP5d6*****">
+                <input  class="form-control" type="text" name="ckey" value="" placeholder="zP5d6*****">
               </div>
 
-              <div class="row">
+              <div class="form-group">
                 <label for="cSecret">Consumer Secret (API Secret)</label>
-                <input type="text" name="cSecret" value="" placeholder="YJqF*****">
+                <input  class="form-control" type="text" name="cSecret" value="" placeholder="YJqF*****">
               </div>
 
-              <div class="row">
+              <div class="form-group">
                 <label for="atSecret">Access Token Secret	</label>
-                <input type="text" name="atSecret" value="" placeholder="	Xa41Q*****">
+                <input  class="form-control" type="text" name="atSecret" value="" placeholder="Xa41Q*****">
               </div>
 
-              <div class="row">
+              <div class="form-group">
                 <label for="at">Access Token</label>
-                <input type="text" name="at" value="" placeholder="87750*****">
+                <input  class="form-control" type="text" name="at" value="" placeholder="87750*****">
               </div>
 
 
-              <button type="submit" name="submit">Submit</button>
+              <button class="btn btn-primary" type="submit" name="submit">Submit</button>
           </form>
         </div>
       </div>
+
+      <footer class="footer">
+          <div class="container">
+              <div class="row">
+                  <p class="text-muted">Twitter service By Ali Abu Ras</p>
+              </div>
+          </div>
+      </footer>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="/src/dist/js/bootstrap.min.js"></script>
+
   </body>
 </html>
