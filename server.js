@@ -9,7 +9,7 @@ let bodyParser = require('body-parser');
 app.use(express.static((__dirname, 'views/')));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+//app.use(bodyParser.urlencoded());
 // in latest body-parser use like below.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator()); // Add this after the bodyParser middlewares!
@@ -27,18 +27,18 @@ app.get('/form',(req,res)=>{
 });
 
 app.post('/form',(req,res)=>{
-   console.log(req.body);
-    req.checkBody('ckey'     , 'Invalid name').notEmpty().isAlpha();
-    req.checkBody('cSecret'  , 'Invalid age').notEmpty().isAlpha();
-    req.checkBody('atSecret' , 'Invalid age').notEmpty().isAlpha();
-    req.checkBody('at'       , 'Invalid age').notEmpty().isAlpha();
-    var errors =  req.getValidationResult();
-    if (errors) {
-        console.log(errors);
-    }
-    else {
-        res.send('post');
-    }
+    // req.checkBody('ckey'     , 'Invalid name').notEmpty().isAlpha();
+    // req.checkBody('cSecret'  , 'Invalid age').notEmpty().isAlpha();
+    // req.checkBody('atSecret' , 'Invalid age').notEmpty().isAlpha();
+    // req.checkBody('at'       , 'Invalid age').notEmpty().isAlpha();
+  //  res.setHeader('Content-Type', 'application/json');
+   // console.log('<-ALI->');
+  console.log(JSON.stringify(req.body));
+   res.render('twitterMessge')
+
+
+//{"ckey":"ergfddsaf","cSecret":"adfadsf","atSecret":"asdadsff","at":"asadff","submit":""} // send these to init for twitter server to start
+
 });
 
 //app.use('/form',express.static(__dirname+'/views/form'));

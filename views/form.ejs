@@ -17,7 +17,46 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="/src/dist/js/jquery.js"></script>
+    <script src="/src/dist/js/jquery.validate.min.js"></script>
     <![endif]-->
+
+    <script>
+        $.validator.setDefaults({
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+
+        $().ready(function() {
+            $("#twitterForm").validate({
+                rules: {
+                    ckey      : "required",
+                    cSecret   : "required",
+                    atSecret  : "required",
+                    at        : "required"
+                },
+                messages: {
+                    ckey    : "Please enter your Consumer Key (API Key)",
+                    cSecret : "Please enter your Consumer Secret (API Secret)",
+                    atSecret: "Please enter your Access Token",
+                    at      : "Please enter your Access Token Secret"
+                }
+            });
+
+            // propose username by combining first- and lastname
+            $("#username").focus(function() {
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                if (firstname && lastname && !this.value) {
+                    this.value = firstname + "." + lastname;
+                }
+            });
+        });
+    </script>
+
+
+
 </head>
   <body>
       <div class="container">
@@ -29,28 +68,28 @@
 
         <div class="row">
 
-          <form class="form" action="" method="post">
+          <form class="form" action="" method="post" id="twitterForm">
               <div class="info">
                <h3>To Fill these informations, please go to <a href="https://dev.twitter.com/">my apps</a> </h3>
               </div>
               <div class="form-group">
                 <label for="ckey">Consumer Key (API Key)</label>
-                <input  class="form-control" type="text" name="ckey" value="" placeholder="zP5d6*****">
+                <input  class="form-control" type="text" name="ckey" value="" placeholder="zP5d6*****" required>
               </div>
 
               <div class="form-group">
                 <label for="cSecret">Consumer Secret (API Secret)</label>
-                <input  class="form-control" type="text" name="cSecret" value="" placeholder="YJqF*****">
+                <input  class="form-control" type="text" name="cSecret" value="" placeholder="YJqF*****" required>
               </div>
 
               <div class="form-group">
                 <label for="atSecret">Access Token Secret	</label>
-                <input  class="form-control" type="text" name="atSecret" value="" placeholder="Xa41Q*****">
+                <input  class="form-control" type="text" name="atSecret" value="" placeholder="Xa41Q*****" required>
               </div>
 
               <div class="form-group">
                 <label for="at">Access Token</label>
-                <input  class="form-control" type="text" name="at" value="" placeholder="87750*****">
+                <input  class="form-control" type="text" name="at" value="" placeholder="87750*****" required>
               </div>
 
 
