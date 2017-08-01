@@ -25,11 +25,20 @@
 <body>
 <div class="container">
 
+    <form class="form" action="" method="post" id="postForm">
+        <div class="row form-group">
+            <h3><p>Please enter the post message, <span class="bg-warning">max length 30 letters.</span></p></h3>
+            <textarea name="message" class="form-control" rows="1" maxlength="30"></textarea>
+        </div>
 
-    <div class="row">
-
-
-    </div>
+        <div class="row form-group">
+            <h3><p>Please enter links, <span class="bg-warning">max number of links are 5,</span> <span class="bg-danger">and must be separated with comma </span></p></h3>
+            <textarea name="links" class="form-control" rows="5"></textarea>
+        </div>
+        <div class="row form-group">
+            <button class="btn btn-primary" type="submit" name="submit">Start Post</button>
+        </div>
+    </form>
 </div>
 
 <footer class="footer">
