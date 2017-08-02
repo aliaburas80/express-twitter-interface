@@ -15,7 +15,7 @@
     "ejs": "^2.5.7",
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
-    "twitter-service": "^4.0.0"
+    "twitter-service": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
