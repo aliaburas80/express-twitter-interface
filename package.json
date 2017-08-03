@@ -18,6 +18,7 @@
     "twitter-service": "^5.0.0"
   },
   "devDependencies": {
+    "kill-all-node-on-windows": "0.0.4",
     "nodemon": "^1.11.0"
   }
 }

@@ -1,3 +1,7 @@
+// const exec = require('child_process').exec;
+// exec('CMD.exe /C "TASKKILL /F /IM node.exe"')
+
+
 let express =require('express');
 let app     = express();
 let ejs     = require('ejs');
@@ -46,21 +50,37 @@ app.post('/twitterMessge',(req,res)=>{
     console.log(JSON.stringify(twitterValues));
     let twiter = require('./routes/createTwitterServer');
     twiter(twitterValues);
+    res.redirect('/twitterPostStatus')
 });
 
-events.on('error', function (stream) {
-    console.log('responded to testEvent');
-});
+app.get('/twitterPostStatus',(req,res,next)=>{
+        // res.writeHead(200, {'Content-Type': 'text/plain'});
+        // try{
+        //     res.send('twitterPostStatus');
+        // }catch(e){
+        //     console.log('Error in set header');
+        // }
+
+//     //if(!res.headersSent)
+//         //res.writeHead(200, {'Content-Type': 'text/plain'});
+//
+    process.on('post', (message) => {
+        res.render('twitterPostStatus',{name:message});
+    });
+    process.on('errors', (message) => {
+        res.render('twitterPostStatus',{name:message});
+    });
+//
+//
+ });
 
 app.listen(PORT,function(){
     console.log(`Server work at localhot: ${PORT} `);
 });
 
- // to track all events globally
-process.on('post', (message) => {
-    console.log(`INDEX  ${message}`);
-});
 
-process.on('errors', (message) => {
-    console.log(`INDEX  ${message}`);
-});
+// TODO
+/*
+
+Change the routs to be only one rout and then make ajax to keep print twitter service.
+*/
