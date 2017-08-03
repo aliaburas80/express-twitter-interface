@@ -21,6 +21,18 @@
     <script src="/src/dist/js/jquery.validate.min.js"></script>
     <![endif]-->
 
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io.connect('http://localhost:8080');
+          socket.on('this', function (type,message) {
+            document.getElementById('message').innerHTML='type of message '+ type +', message: '+message
+          });
+
+          socket.emit('private message', 'ali','hi');
+        </script>
+
+
 </head>
 <body>
 <div class="container">
@@ -40,6 +52,15 @@
         </div>
     </form>
 </div>
+
+
+<div class="row">
+    <div class="status">
+        <% JSON.stringify(name) %>
+    </div>
+</div>
+
+
 
 <footer class="footer">
     <div class="container">

@@ -12,10 +12,12 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
+    "cncjs": "^1.9.7",
     "ejs": "^2.5.7",
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
-    "twitter-service": "^5.0.0"
+    "socket.io": "^2.0.3",
+    "twitter-service": "^5.0.1"
   },
   "devDependencies": {
     "kill-all-node-on-windows": "0.0.4",
