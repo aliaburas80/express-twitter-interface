@@ -24,10 +24,12 @@ app.use(expressValidator()); // Add this after the bodyParser middlewares!
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res)=>{
+  process.emit('stopPost')
   res.send('hello word');
 });
 
 app.get('/form',(req,res)=>{
+  process.emit('stopPost')
    res.render('form');
 });
 
@@ -39,20 +41,25 @@ app.post('/form',(req,res)=>{
      at      :req.body.at,
      message    :{
                     postMessage:'',
-                    links      :''
+                    links      :'',
+                    hashtags   :''
                  }
    }
     res.redirect('/twitterMessge');
 });
 
 app.get('/twitterMessge',(req,res)=>{
+    process.emit('stopPost')
     res.render('twitterMessge',{name:'Ali'})
 });
 
 app.post('/twitterMessge',(req,res)=>{
-   console.log(req.body);
+    process.emit('allowPost')
+    console.log(req.body);
     twitterValues.message.postMessage = req.body.message;
     twitterValues.message.links = req.body.links;
+    twitterValues.message.hashtags = req.body.hashtages;
+
     console.log(JSON.stringify(twitterValues));
     let twiter = require('./routes/createTwitterServer');
     twiter(twitterValues);

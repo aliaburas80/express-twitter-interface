@@ -11,7 +11,9 @@
     <link href="/src/dist/css/bootstrap.css" rel="stylesheet">
     <link href="/src/dist/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/src/dist/css/sticky-footer.css" rel="stylesheet">
-
+    <link href="/src/dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/src/dist/css/blog.css" rel="stylesheet">
+    <script src="/src/dist/js/ie-emulation-modes-warning.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,7 +37,23 @@
 
 </head>
 <body>
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+        <a class="blog-nav-item" href="#">Home</a>
+        <a class="blog-nav-item" href="/form">Twitter config</a>
+        <a class="blog-nav-item active" href="/twitterMessge">Twitter message</a>
+        <a class="blog-nav-item" href="/twitterMessge">Twitter status messages</a>
+        <a class="blog-nav-item" href="#">About</a>
+      </nav>
+    </div>
+  </div>
+
 <div class="container">
+  <div class="row">
+      <h1>Twitter sevice interface</h1>
+  </div>
+
 
     <form class="form" action="" method="post" id="postForm">
         <div class="row form-group">
@@ -46,6 +64,11 @@
         <div class="row form-group">
             <h3><p>Please enter links, <span class="bg-warning">max number of links are 5,</span> <span class="bg-danger">and must be separated with comma </span></p></h3>
             <textarea name="links" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="row form-group">
+            <h3><p>Please enter hashtages, <span class="bg-warning">add them with # simple like #code#node#express</span></p></h3>
+            <textarea name="hashtages" class="form-control" rows="5"></textarea>
         </div>
         <div class="row form-group">
             <button class="btn btn-primary" type="submit" name="submit">Start Post</button>
@@ -65,7 +88,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <p class="text-muted">Twitter service By Ali Abu Ras</p>
+          <p class="text-muted">Copyright &copy;2016 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
         </div>
     </div>
 </footer>

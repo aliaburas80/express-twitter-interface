@@ -11,7 +11,9 @@
     <link href="src/dist/css/bootstrap.css" rel="stylesheet">
     <link href="src/dist/css/bootstrap-theme.css" rel="stylesheet">
     <link href="src/dist/css/sticky-footer.css" rel="stylesheet">
-
+    <link href="/src/dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/src/dist/css/blog.css" rel="stylesheet">
+    <script src="/src/dist/js/ie-emulation-modes-warning.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,17 +25,23 @@
 
         <script src="/socket.io/socket.io.js"></script>
         <script>
+          var wrongCount=0,successCount = 0;
           var socket = io.connect('http://localhost:8080');
           socket.on('this', function (type,message) {
             console.log('message');
 
             var div = document.createElement('div');
-            div.textContent = 'type of message '+ type +', message: '+message;
+            div.textContent = message;
             if(type ==='errors'){
               div.setAttribute('class', 'bg-danger');
+              wrongCount++;
             }else{
               div.setAttribute('class', 'bg-success');
+              successCount++;
             }
+            console.log(wrongCount);
+            document.getElementById('wrongNumber').innerHTML   = wrongCount;
+            document.getElementById('successNumber').innerHTML = successCount;
             document.getElementById('messageContainer').appendChild(div);
           });
 
@@ -44,12 +52,13 @@
 
 
         div#messageContainer {
-            margin-top: 50px;
-            margin-bottom: 50px;
-            max-width: 900px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             max-height: 500px;
+            /*min-width: 100%;*/
             background: #e8e3e3;
             overflow: auto;
+            border-radius: 5px;
         }
 
           .bg-danger,.bg-success{
@@ -59,9 +68,44 @@
             border-radius: 5px;
           }
 
+          .wrong-counter,.success-counter{
+            display: inline-block;
+            position: relative;
+            margin-bottom: 30px;
+            margin-left: 40px;
+            margin-right: 1px
+          }
+
+          .counters{
+            margin: 0 auto;
+          }
+          .container{
+            max-width: 90%;
+          }
         </style>
 </head>
 <body>
+
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+        <a class="blog-nav-item" href="#">Home</a>
+        <a class="blog-nav-item" href="/form">Twitter config</a>
+        <a class="blog-nav-item" href="/twitterMessge">Twitter message</a>
+        <a class="blog-nav-item active" href="/twitterMessge">Twitter status messages</a>
+        <a class="blog-nav-item" href="#">About</a>
+      </nav>
+    </div>
+  </div>
+
+<div class='container'>
+  <div class="row">
+      <h1>Twitter sevice interface</h1>
+  </div>
+
+</div>
+
+
 <div class="container">
     <div class="row">
         <div class="status" id='messageContainer'>
@@ -69,12 +113,22 @@
     </div>
 </div>
 
+<div class="container">
+  <div class='row counters text-center'>
+    <div class= 'bg-danger wrong-counter col-lg-5 col-md-5 col-sm-5 col-xm-5 text-center'><span>Wrong counter : </span><span id='wrongNumber'></span></div>
+    <div class= 'bg-success success-counter col-lg-5 col-md-5 col-sm-5 col-xm-5 text-center'><span>Wrong counter : </span><span id='successNumber'></span></div>
+  </div>
+</div>
+
+
+
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <p class="text-muted">Twitter service By Ali Abu Ras</p>
+<p class="text-muted">Copyright &copy;2016 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
         </div>
     </div>
+
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

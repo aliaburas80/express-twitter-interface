@@ -27,15 +27,7 @@ let doPost =()=>{
         }],
         "links" :tiwtterDataObject.message.links,
 
-        "hashtags":hashTags,
+        "hashtags":tiwtterDataObject.message.hashtags,
         "message" :tiwtterDataObject.message.postMessage
     });
 }
-/*
-{
-"ckey":"9cQWIozM5Kg9T9hqmq4fs2VeZ",
-"cSecret":"5mCW4tcSX8dAE2R9dCUOCNac4Bcg1jivJju9STvJAqMnngy11z",
-"atSecret":"234758171-OKUq3q22KtVUl48oqELbBAPchyhGeANcbSFyqTtI",
-"at":"Yo1EKGmCenLUG7medCETtadiEvoQceQltfIyOTFg3wp4F",
-"message":{"postMessage":"Check out! ","links":"https://github.com/aliaburas80/webserver,https://github.com/aliaburas80/twitter_microservice"}}
-*/

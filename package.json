@@ -17,7 +17,7 @@
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
     "socket.io": "^2.0.3",
-    "twitter-service": "^5.0.1"
+    "twitter-service": "^5.0.8"
   },
   "devDependencies": {
     "kill-all-node-on-windows": "0.0.4",
