@@ -1,24 +1,6 @@
 
-
-      <div class="blog-masthead">
-        <div class="container">
-          <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/">Home</a>
-            <a class="blog-nav-item " href="/form">Twitter config</a>
-            <a class="blog-nav-item" href="/twitterMessge">Twitter message</a>
-            <a class="blog-nav-item" href="/twitterMessge">Twitter status messages</a>
-            <a class="blog-nav-item " href="/about">About</a>
-          </nav>
-        </div>
-      </div>
-
-
-      <div class="container">
-
-          <div class="row">
               <h1>Twitter sevice interface</h1>
-          </div>
-
+        
           <div class="row">
             <h4> This is an interface for <code><a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> twitter_microservice </a></code> using expressjs.  </h4>
           </div>
@@ -75,11 +57,3 @@
 
 
       </div>
-
-      <footer class="footer">
-          <div class="container">
-              <div class="row">
-                <p class="text-muted">Copyright &copy;2017 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
-              </div>
-          </div>
-      </footer>
