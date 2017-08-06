@@ -3,7 +3,6 @@
 let express = require('express');
 let app =require('express')();
 let ejs     = require('ejs');
-let expressValidator = require('express-validator');
 let bodyParser = require('body-parser');
 let twitterValues = {};
 let events    = require('twitter-service/src/events/Event');
@@ -20,7 +19,7 @@ server.listen(PORT,function(){
 app.use(express.static((__dirname, 'views/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressValidator()); // Add this after the bodyParser middlewares!
+
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res)=>{
@@ -67,7 +66,9 @@ app.post('/twitterMessge',(req,res)=>{
     res.sendFile(__dirname + '/views/twitterPostStatus.html');
 });
 
-
+app.get('/about',(req,res)=>{
+    res.sendFile(__dirname + '/views/about.html');
+})
 
 io.on('connection', function (socket) {
   console.log('done');
@@ -87,9 +88,3 @@ process.on('post', (message) => {
 process.on('errors', (message) => {
   io.emit('this', 'errors',message);
 });
-
-// TODO
-/*
-
-Change the routs to be only one rout and then make ajax to keep print twitter service.
-*/

@@ -14,15 +14,6 @@
     <link href="/src/dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="/src/dist/css/blog.css" rel="stylesheet">
     <script src="/src/dist/js/ie-emulation-modes-warning.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="/src/dist/js/jquery.js"></script>
-    <script src="/src/dist/js/jquery.validate.min.js"></script>
-    <![endif]-->
-
 
         <script src="/socket.io/socket.io.js"></script>
         <script>
@@ -35,16 +26,45 @@
         </script>
 
 
+        <script>
+            $.validator.setDefaults({
+                submitHandler: function() {
+                    alert("submitted!");
+                }
+            });
+
+            $().ready(function() {
+                $("#twitterForm").validate({
+                    rules: {
+                        message : "required"
+                    },
+                    messages: {
+                        ckey    : "Pleaes add message to post!"
+                    }
+                });
+
+                // propose username by combining first- and lastname
+                $("#username").focus(function() {
+                    var firstname = $("#firstname").val();
+                    var lastname = $("#lastname").val();
+                    if (firstname && lastname && !this.value) {
+                        this.value = firstname + "." + lastname;
+                    }
+                });
+            });
+        </script>
+
+
 </head>
 <body>
   <div class="blog-masthead">
     <div class="container">
       <nav class="blog-nav">
-        <a class="blog-nav-item" href="#">Home</a>
-        <a class="blog-nav-item" href="/form">Twitter config</a>
+        <a class="blog-nav-item " href="/">Home</a>
+        <a class="blog-nav-item " href="/form">Twitter config</a>
         <a class="blog-nav-item active" href="/twitterMessge">Twitter message</a>
-        <a class="blog-nav-item" href="/twitterMessge">Twitter status messages</a>
-        <a class="blog-nav-item" href="#">About</a>
+        <a class="blog-nav-item " href="/twitterMessge">Twitter status messages</a>
+        <a class="blog-nav-item " href="/about">About</a>
       </nav>
     </div>
   </div>
@@ -58,7 +78,7 @@
     <form class="form" action="" method="post" id="postForm">
         <div class="row form-group">
             <h3><p>Please enter the post message, <span class="bg-warning">max length 30 letters.</span></p></h3>
-            <textarea name="message" class="form-control" rows="1" maxlength="30"></textarea>
+            <textarea name="message" class="form-control" rows="1" maxlength="30" required></textarea>
         </div>
 
         <div class="row form-group">
@@ -88,7 +108,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-          <p class="text-muted">Copyright &copy;2016 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
+          <p class="text-muted">Copyright &copy;2017 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
         </div>
     </div>
 </footer>

@@ -28,6 +28,12 @@ let doPost =()=>{
         "links" :tiwtterDataObject.message.links,
 
         "hashtags":tiwtterDataObject.message.hashtags,
-        "message" :tiwtterDataObject.message.postMessage
+        "message" :checkPostMessage(tiwtterDataObject.message.postMessage)
     });
+
+    console.log(`POST MESSAGE: ${checkPostMessage(tiwtterDataObject.message.postMessage)}`)
+}
+
+let checkPostMessage = (message)=>{
+  return message.length <=0 ? 'Ali Abu Ras say Hi! ' : message;
 }

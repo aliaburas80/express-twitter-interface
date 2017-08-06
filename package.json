@@ -14,10 +14,11 @@
     "bootstrap": "^3.3.7",
     "cncjs": "^1.9.7",
     "ejs": "^2.5.7",
+    "expres": "0.0.5",
     "express": "^4.15.3",
-    "express-validator": "^3.2.1",
+    "nodemon": "^1.11.0",
     "socket.io": "^2.0.3",
-    "twitter-service": "^5.0.8"
+    "twitter-service": "^6.0.2"
   },
   "devDependencies": {
     "kill-all-node-on-windows": "0.0.4",

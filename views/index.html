@@ -50,6 +50,12 @@
     </script>
 
 
+    <style media="screen">
+      ul{
+        margin-left: 20px
+      }
+    </style>
+
 
 </head>
   <body>
@@ -58,8 +64,8 @@
       <div class="blog-masthead">
         <div class="container">
           <nav class="blog-nav">
-            <a class="blog-nav-item" href="/">Home</a>
-            <a class="blog-nav-item active" href="/form">Twitter config</a>
+            <a class="blog-nav-item active" href="/">Home</a>
+            <a class="blog-nav-item " href="/form">Twitter config</a>
             <a class="blog-nav-item" href="/twitterMessge">Twitter message</a>
             <a class="blog-nav-item" href="/twitterMessge">Twitter status messages</a>
             <a class="blog-nav-item " href="/about">About</a>
@@ -74,36 +80,61 @@
               <h1>Twitter sevice interface</h1>
           </div>
 
+          <div class="row">
+            <h4> This is an interface for <code><a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> twitter_microservice </a></code> using expressjs.  </h4>
+          </div>
 
-        <div class="row">
-
-          <form class="form" action="" method="post" id="twitterForm">
-              <div class="info">
-               <h3>To Fill these informations, please go to <a href="https://apps.twitter.com/" target="_blank">my apps</a> </h3>
+          <div class="row">
+            <h4 class=''>
+              <p>How to use:</p>
+            </h4>
+              <div class="row">
+                <ul>
+                  <li>You should have Twitter account, and have a <a href="https://apps.twitter.com/" target="_blank">twitter application app</a></li>
+                  <li>Access to your app, click on <code>Keys and Access Tokens</code>
+                    <a class="" data-toggle="modal" data-target="#myModal">checkout image</a>
+                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <img src="img/1.jpg" class="img-responsive">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>Now you have to cope <code>(Consumer Key(API Key), Consumer Secret(API Secret), Access Token and Access Token Secret.)</code> and fill them into fields in <a href="/form">Twitter config</a> page</li>
+                  <li>Click on next button to complete</li>
+                  <li>
+                    Twitter message
+                    <p>Adding your message, links and hashtages</p>
+                    <ol>
+                      <li><strong>First   Field : </strong> Add message with 30 letters max </li>
+                      <li><strong>Secound Field : </strong> Add links that you want to share! separating with comma.  <span class="bg-warning"> We prefer 5 links at max</span> </li>
+                      <li><strong>Third Field : </strong> Add hashtags like <code>#code#node#express</code></li>
+                      <li>Click on start post</li>
+                    </ol>
+                  </li>
+                  <li>New page will open to monitoring post messages.</li>
+                </ul>
               </div>
-              <div class="form-group">
-                <label for="ckey">Consumer Key (API Key)</label>
-                <input  class="form-control" type="text" name="ckey" value="" placeholder="zP5d6*****" required>
-              </div>
+          </div>
 
-              <div class="form-group">
-                <label for="cSecret">Consumer Secret (API Secret)</label>
-                <input  class="form-control" type="text" name="cSecret" value="" placeholder="YJqF*****" required>
-              </div>
+          <h4><p>Dependencies</p></h4>
+          <div class="row">
+            <ul>
+              <li><code>bootstrap</code></li>
+              <li><code>ejs</code></li>
+              <li><code>express</code></li>
+              <li><code>nodemon</code></li>
+              <li><code>socket.io</code></li>
+              <li><code>twitter-service</code></li>
+              <li><code>body-parser</code></li>
+            </ul>
+          </div>
 
-              <div class="form-group">
-                <label for="at">Access Token</label>
-                <input  class="form-control" type="text" name="at" value="" placeholder="87750*****" required>
-              </div>
 
-              <div class="form-group">
-                <label for="atSecret">Access Token Secret	</label>
-                <input  class="form-control" type="text" name="atSecret" value="" placeholder="Xa41Q*****" required>
-              </div>
 
-              <button class="btn btn-primary" type="submit" name="submit">Next</button>
-          </form>
-        </div>
       </div>
 
       <footer class="footer">
