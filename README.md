@@ -1,64 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Twitter Service!</title>
-
-    <!-- Bootstrap -->
-    <link href="/src/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/src/dist/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="/src/dist/css/sticky.css" rel="stylesheet">
-    <link href="/src/dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="/src/dist/css/blog.css" rel="stylesheet">
-    <script src="/src/dist/js/ie-emulation-modes-warning.js"></script>
-
-    <script>
-        $.validator.setDefaults({
-            submitHandler: function() {
-                alert("submitted!");
-            }
-        });
-
-        $().ready(function() {
-            $("#twitterForm").validate({
-                rules: {
-                    ckey      : "required",
-                    cSecret   : "required",
-                    atSecret  : "required",
-                    at        : "required"
-                },
-                messages: {
-                    ckey    : "Please enter your Consumer Key (API Key)",
-                    cSecret : "Please enter your Consumer Secret (API Secret)",
-                    atSecret: "Please enter your Access Token",
-                    at      : "Please enter your Access Token Secret"
-                }
-            });
-
-            // propose username by combining first- and lastname
-            $("#username").focus(function() {
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                if (firstname && lastname && !this.value) {
-                    this.value = firstname + "." + lastname;
-                }
-            });
-        });
-    </script>
-
-
-    <style media="screen">
-      ul{
-        margin-left: 20px
-      }
-    </style>
-
-
-</head>
-  <body>
 
 
       <div class="blog-masthead">
@@ -144,10 +83,3 @@
               </div>
           </div>
       </footer>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="/src/dist/js/bootstrap.min.js"></script>
-
-  </body>
-</html>
