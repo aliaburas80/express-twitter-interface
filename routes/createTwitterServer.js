@@ -35,5 +35,5 @@ let doPost =()=>{
 }
 
 let checkPostMessage = (message)=>{
-  return message.length <=0 ? 'Ali Abu Ras say Hi! ' : message;
+  return message.length <=0 ? Ali Abu Ras say's Hi! " : message;
 }
