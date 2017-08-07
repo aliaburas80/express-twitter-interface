@@ -32,6 +32,6 @@ Express interface for twitter_microservice
     <li><code>twitter-service</code></li>
     <li><code>body-parser</code></li>
   </ul>
+  </code>
 
-    Copyright &copy;2017 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>,
-    <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a>
+  <h4>  Copyright &copy;2017 by Ali Abu Ras</h4>
