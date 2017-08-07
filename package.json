@@ -18,7 +18,7 @@
     "express": "^4.15.3",
     "nodemon": "^1.11.0",
     "socket.io": "^2.0.3",
-    "twitter-service": "^6.0.2"
+    "twitter-service": "^6.0.4"
   },
   "devDependencies": {
     "kill-all-node-on-windows": "0.0.4",
