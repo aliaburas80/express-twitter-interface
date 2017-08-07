@@ -5,16 +5,6 @@ Express interface for twitter_microservice
 <ul>
   <li>You should have Twitter account, and have a <a href="https://apps.twitter.com/" target="_blank">twitter application app</a></li>
   <li>Access to your app, click on <code>Keys and Access Tokens</code>
-    <a class="" data-toggle="modal" data-target="#myModal">checkout image</a>
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img src="img/1.jpg" class="img-responsive">
-          </div>
-        </div>
-      </div>
-    </div>
   </li>
   <li>Now you have to cope <code>(Consumer Key(API Key), Consumer Secret(API Secret), Access Token and Access Token Secret.)</code> and fill them into fields in <a href="/form">Twitter config</a> page</li>
   <li>Click on next button to complete</li>
@@ -43,4 +33,4 @@ Express interface for twitter_microservice
     <li><code>body-parser</code></li>
   </ul>
 
-    <p class="text-muted">Copyright &copy;2017 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
+    <p>Copyright &copy;2017 by Ali Abu Ras, <a href="https://github.com/aliaburas80/twitter_microservice" target="_blank"> Twitter service</a>, <a href="https://github.com/aliaburas80/express-twitter-interface" target="_blank">Expressjs interface for twitter service</a></p>
