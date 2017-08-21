@@ -76,9 +76,9 @@ io.on('connection', function (socket) {
     console.log('I received a private message by ', from, ' saying ', msg);
   });
 
-  socket.on('disconnect', function () {
-    io.emit('user disconnected');
-  });
+  // socket.on('disconnect', function () {
+  //   io.emit('user disconnected');
+  // });
 });
 
 process.on('post', (message) => {
