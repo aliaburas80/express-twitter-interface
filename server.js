@@ -13,8 +13,10 @@ let PORT = process.env.PORT || 8080;
 let server = http.createServer(app);
 
 let io = require('socket.io')(server);
-io.set('transports', ['xhr-polling']);
-io.set('polling duration', 10);
+
+io.set("transports", ["xhr-polling"]);
+io.set("polling duration", 10);
+
 
 server.listen(PORT,function(){
     console.log(`Server work at localhot: ${PORT} `);
@@ -27,12 +29,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res)=>{
-  process.emit('stopPost')
+  //process.emit('stopPost')
   res.send('hello word');
 });
 
 app.get('/form',(req,res)=>{
-  process.emit('stopPost')
+//  process.emit('stopPost')
    res.render('form');
 });
 
@@ -52,7 +54,7 @@ app.post('/form',(req,res)=>{
 });
 
 app.get('/twitterMessge',(req,res)=>{
-    process.emit('stopPost')
+    //process.emit('stopPost')
     res.render('twitterMessge',{name:'Ali'})
 });
 
