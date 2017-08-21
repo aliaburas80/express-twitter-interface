@@ -18,8 +18,8 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
           var wrongCount=0,successCount = 0;
-          var socket = io.connect('http://localhost:3000');
-        //  var socket = io.connect('https://twitter-service-interface.herokuapp.com');
+          //var socket = io.connect('http://localhost:3000');
+          var socket = io.connect('https://twitter-service-interface.herokuapp.com');
           socket.on('this', function (type,message) {
             var div = document.createElement('div');
             div.textContent = message;

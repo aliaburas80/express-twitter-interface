@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "kill-all-node-on-windows": "0.0.4",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "socket.io-emitter": "^3.1.0"
   }
 }
