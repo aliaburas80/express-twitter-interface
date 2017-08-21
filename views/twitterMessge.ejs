@@ -15,19 +15,6 @@
     <link href="/src/dist/css/blog.css" rel="stylesheet">
     <script src="/src/dist/js/ie-emulation-modes-warning.js"></script>
 
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-        //  var socket = io.connect('http://localhost:8080');
-          var socket = io()//.connect('https://twitter-service-interface.herokuapp.com');
-
-          socket.on('this', function (type,message) {
-            document.getElementById('message').innerHTML='type of message '+ type +', message: '+message
-          });
-
-          socket.emit('private message', 'ali','hi');
-        </script>
-
-
         <script>
             $.validator.setDefaults({
                 submitHandler: function() {
