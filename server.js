@@ -2,12 +2,15 @@
 // exec('CMD.exe /C "TASKKILL /F /IM node.exe"')
 let express = require('express');
 let app =require('express')();
+let http = require('http');
 let ejs     = require('ejs');
 let bodyParser = require('body-parser');
 let twitterValues = {};
 let events    = require('twitter-service/src/events/Event');
 let PORT = process.env.PORT || 8080;
-let server = require('http').Server(app);
+//let server = require('http').Server(app);
+
+let server = http.createServer(app);
 
 server.listen(PORT,function(){
     console.log(`Server work at localhot: ${PORT} `);

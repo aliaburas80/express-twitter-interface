@@ -16,6 +16,7 @@
     "ejs": "^2.5.7",
     "expres": "0.0.5",
     "express": "^4.15.3",
+    "http": "0.0.0",
     "nodemon": "^1.11.0",
     "socket.io": "^2.0.3",
     "twitter-service": "^6.0.4"
