@@ -18,9 +18,8 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
           var wrongCount=0,successCount = 0;
-        //  var socket = io.connect('http://localhost:8080');
-
-          var socket = io.connect('https://twitter-service-interface.herokuapp.com');
+          var socket = io.connect('http://localhost:3000');
+        //  var socket = io.connect('https://twitter-service-interface.herokuapp.com');
 
           socket.on('this', function (type,message) {
             var div = document.createElement('div');
@@ -37,7 +36,7 @@
             document.getElementById('messageContainer').appendChild(div);
           });
 
-        ///  socket.emit('private message', 'ali','hi');
+          socket.emit('private message', 'ali','hi');
         </script>
 
         <style>
@@ -108,7 +107,7 @@
 <div class="container">
   <div class='row counters text-center'>
     <div class= 'bg-danger wrong-counter col-lg-5 col-md-5 col-sm-5 col-xm-5 text-center'><span>Wrong counter : </span><span id='wrongNumber'></span></div>
-    <div class= 'bg-success success-counter col-lg-5 col-md-5 col-sm-5 col-xm-5 text-center'><span>Success counter : </span><span id='successNumber'></span></div>
+    <div class= 'bg-success success-counter col-lg-5 col-md-5 col-sm-5 col-xm-5 text-center'><span>Wrong counter : </span><span id='successNumber'></span></div>
   </div>
 </div>
 
