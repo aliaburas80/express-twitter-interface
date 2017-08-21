@@ -12,13 +12,13 @@ let PORT = process.env.PORT || 8080;
 
 let server = http.createServer(app);
 
-server.listen(PORT,function(){
-    console.log(`Server work at localhot: ${PORT} `);
-});
-
 let io = require('socket.io')(server);
 io.set('transports', ['xhr-polling']);
 io.set('polling duration', 10);
+
+server.listen(PORT,function(){
+    console.log(`Server work at localhot: ${PORT} `);
+});
 
 app.use(express.static((__dirname, 'views/')));
 app.use(bodyParser.json());
