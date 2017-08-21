@@ -11,6 +11,7 @@ let PORT = process.env.PORT || 8080;
 let server = require('http').Server(app);
 let io = require('socket.io')(server);
 
+
 server.listen(PORT,function(){
     console.log(`Server work at localhot: ${PORT} `);
 });
@@ -71,14 +72,13 @@ app.get('/about',(req,res)=>{
 })
 
 io.on('connection', function (socket) {
-  console.log('done');
   socket.on('private message', function (from, msg) {
     console.log('I received a private message by ', from, ' saying ', msg);
   });
 
-  // socket.on('disconnect', function () {
-  //   io.emit('user disconnected');
-  // });
+   socket.on('disconnect', function () {
+     io.emit('user disconnected');
+   });
 });
 
 process.on('post', (message) => {
