@@ -7,16 +7,15 @@ let bodyParser = require('body-parser');
 let twitterValues = {};
 let events    = require('twitter-service/src/events/Event');
 let PORT = process.env.PORT || 8080;
-let server = require('http').Server(app);
-let io = require('socket.io')(server);
-io.set('transports', ['xhr-polling']);
-io.set('polling duration', 10);
-
 
 server.listen(PORT,function(){
     console.log(`Server work at localhot: ${PORT} `);
 });
 
+let server = require('http').Server(app);
+let io = require('socket.io')(server);
+io.set('transports', ['xhr-polling']);
+io.set('polling duration', 10);
 
 app.use(express.static((__dirname, 'views/')));
 app.use(bodyParser.json());
